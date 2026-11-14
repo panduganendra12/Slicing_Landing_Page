@@ -74,6 +74,17 @@ section {
     background: linear-gradient(135deg, #2aa6c9, #9fe0ee)
 }
 
+.section-image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px
+}
+
+.welcome-image {
+    min-height: 320px
+}
+
 /* Preloader */
 #preloader {
     position: fixed;
@@ -143,7 +154,9 @@ body.is-loading {
     align-items: center;
     color: #fff;
     padding: 0;
-    background: linear-gradient(180deg, #e0532b 0, #f08a4b 12%, #1f5d6b 38%, #0f3f4d 75%, var(--cream) 100%)
+    background:
+        linear-gradient(90deg, rgba(6, 25, 38, .72), rgba(6, 25, 38, .12)),
+        url("img/hero-bg.jpg") center / cover no-repeat
 }
 
 .SectionHero h1 {
@@ -190,6 +203,13 @@ body.is-loading {
     border-radius: 0
 }
 
+.room-image {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover
+}
+
 .room-card .body {
     padding: 1rem 1.2rem
 }
@@ -210,6 +230,10 @@ body.is-loading {
     color: #c3cde0
 }
 
+.dining-image {
+    height: 260px
+}
+
 /* Wellness */
 .SectionWellness {
     background: var(--cream)
@@ -224,9 +248,22 @@ body.is-loading {
     text-align: center
 }
 
+.wellness-image {
+    display: block;
+    width: 100%;
+    height: 130px;
+    margin: .75rem 0;
+    object-fit: cover;
+    border-radius: 4px
+}
+
 /* Neighborhood */
 .SectionNeighborhood {
     background: var(--sand)
+}
+
+.neighborhood-image {
+    min-height: 340px
 }
 
 .nb-item {
@@ -252,6 +289,14 @@ body.is-loading {
     border-radius: 0
 }
 
+.offer-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover
+}
+
 /* Footer */
 .SectionFooter {
     background: var(--cream);
@@ -263,4 +308,11 @@ body.is-loading {
 .SectionFooter a {
     color: var(--ink);
     text-decoration: none
+}
+
+.footer-logo {
+    display: block;
+    width: min(100%, 220px);
+    height: auto;
+    margin-bottom: 1rem
 }

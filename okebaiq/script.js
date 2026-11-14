@@ -1,8 +1,49 @@
-// Preloader: tampil minimal 1,5 detik, hilang setelah semua aset selesai dimuat
-const MIN_LOADING_MS = 1500;
-const loadStartedAt = performance.now();
-window.addEventListener('load', () => {
-    const wait = Math.max(0, MIN_LOADING_MS - (performance.now() - loadStartedAt));
+const GIF_DURATION_FALLBACK_MS = 1500;
+
+const preGif = document.querySelector('#preloader img');
+let gifShownAt = performance.now();
+if (preGif.complete) gifShownAt = performance.now();
+else preGif.addEventListener('load', () => { gifShownAt = performance.now(); });
+
+// Baca durasi GIF dengan menjumlahkan delay setiap frame
+function readGifDuration(url) {
+    return fetch(url)
+        .then(r => r.arrayBuffer())
+        .then(buf => {
+            const b = new Uint8Array(buf);
+            const packed = b[10];
+            let pos = 13; // lewati header + logical screen descriptor
+            if (packed & 0x80) pos += 3 * (1 << ((packed & 7) + 1));
+            const skipSubBlocks = () => { while (b[pos] !== 0) pos += b[pos] + 1; pos++; };
+            let total = 0;
+            while (pos < b.length) {
+                const t = b[pos++];
+                if (t === 0x21) {
+                    const label = b[pos++];
+                    if (label === 0xF9) {
+                        const delay = b[pos + 2] | (b[pos + 3] << 8); // satuan 1/100 detik
+                        total += (delay <= 1 ? 10 : delay * 10);
+                        skipSubBlocks();
+                    } else skipSubBlocks();
+                } else if (t === 0x2C) {
+                    pos += 8;
+                    const lp = b[pos++];
+                    if (lp & 0x80) pos += 3 * (1 << ((lp & 7) + 1));
+                    pos++; // LZW min code size
+                    skipSubBlocks();
+                } else if (t === 0x3B) break;
+                else break;
+            }
+            if (!total) throw new Error('durasi 0');
+            return total;
+        });
+}
+
+const gifDuration = readGifDuration(preGif.getAttribute('src')).catch(() => GIF_DURATION_FALLBACK_MS);
+
+window.addEventListener('load', async () => {
+    const duration = await gifDuration;
+    const wait = Math.max(0, duration - (performance.now() - gifShownAt));
     setTimeout(() => {
         const pre = document.getElementById('preloader');
         pre.classList.add('hide');
