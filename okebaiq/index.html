@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Swaha Signatures</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="is-loading">
+
+    <!-- ===== SectionPreloader ===== -->
+    <div id="preloader" aria-hidden="true">
+        <img src="loadstart.gif" alt="">
+    </div>
+    <noscript>
+        <style>
+            #preloader {
+                display: none
+            }
+
+            body.is-loading {
+                overflow: auto
+            }
+        </style>
+    </noscript>
+
+    <!-- ===== SectionNavbar ===== -->
+    <header class="SectionNavbar" id="SectionNavbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 col-6">
+                    <p class="brand text-white">The Swaha Signatures</p>
+                </div>
+                <div class="col-md-8 col-6 text-end">
+                    <span class="d-none d-md-inline">
+                        <a href="#SectionWelcome">Tentang</a><a href="#SectionRooms">Kamar</a>
+                        <a href="#SectionDining">Dining</a><a href="#SectionWellness">Wellness</a>
+                        <a href="#SectionNeighborhood">Sekitar</a>
+                    </span>
+                    <a href="#SectionOffer" class="btn btn-swaha btn-sm ms-3">Pesan</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== SectionHero ===== -->
+    <section class="SectionHero" id="SectionHero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-12">
+                    <h1>HOME</h1>
+                    <p class="mb-1">Mulai dari</p>
+                    <p class="price">IDR 999.000++ <small>/ malam</small></p>
+                    <a href="#SectionOffer" class="btn btn-swaha">Pesan sekarang</a>
+                </div>
+                <div class="col-md-4 d-none d-md-block"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SectionWelcome ===== -->
+    <section class="SectionWelcome" id="SectionWelcome">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <span class="badge-tag">Tentang kami</span>
+                    <h2>Selamat datang di The Swaha Signatures</h2>
+                    <p class="text-muted">Ganti teks ini dengan deskripsi hotel. Ceritakan lokasi, suasana, dan hal yang
+                        membuat tamu merasa seperti di rumah sendiri.</p>
+                    <a href="#SectionRooms" class="btn btn-outline-swaha">Lihat kamar</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="ph warm" style="min-height:320px"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SectionRooms ===== -->
+    <section class="SectionRooms" id="SectionRooms">
+        <div class="container">
+            <div class="row align-items-end mb-4">
+                <div class="col-md-9 col-8">
+                    <h2 class="mb-0">Tipe kamar kami</h2>
+                </div>
+                <div class="col-md-3 col-4 text-end">
+                    <button class="btn btn-outline-swaha btn-sm" data-rooms="prev"
+                        aria-label="Sebelumnya">&lsaquo;</button>
+                    <button class="btn btn-outline-swaha btn-sm" data-rooms="next"
+                        aria-label="Berikutnya">&rsaquo;</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="rooms-track" id="roomsTrack">
+                        <article class="room-card">
+                            <div class="ph"></div>
+                            <div class="body">
+                                <h4>Deluxe Room</h4>
+                                <p class="text-muted small mb-0">28 m² · 2 tamu</p>
+                            </div>
+                        </article>
+                        <article class="room-card">
+                            <div class="ph warm"></div>
+                            <div class="body">
+                                <h4>Grand Deluxe</h4>
+                                <p class="text-muted small mb-0">34 m² · 3 tamu</p>
+                            </div>
+                        </article>
+                        <article class="room-card">
+                            <div class="ph pool"></div>
+                            <div class="body">
+                                <h4>Family Suite</h4>
+                                <p class="text-muted small mb-0">52 m² · 4 tamu</p>
+                            </div>
+                        </article>
+                        <article class="room-card">
+                            <div class="ph"></div>
+                            <div class="body">
+                                <h4>Signature Suite</h4>
+                                <p class="text-muted small mb-0">70 m² · 4 tamu</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SectionDining ===== -->
+    <section class="SectionDining" id="SectionDining">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-md-8">
+                    <h2>Pengalaman bersantap</h2>
+                    <p class="muted">Deskripsi singkat tentang restoran dan bar hotel.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="ph warm mb-3" style="min-height:260px"></div>
+                    <h4>Restoran</h4>
+                    <p class="muted mb-0">Sarapan hingga makan malam.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="ph mb-3" style="min-height:260px"></div>
+                    <h4>Sea Bar</h4>
+                    <p class="muted mb-0">Koktail dan hidangan ringan di tepi pantai.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Wellness-->
+    <section class="SectionWellness" id="SectionWellness">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-md-6">
+                    <span class="badge-tag">Wellness</span>
+                    <h2>Wellness &amp; Leisure</h2>
+                    <p class="text-muted">Spa, kolam renang, dan fasilitas kebugaran untuk menenangkan diri.</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="info-card">
+                        <h4>Swaha Spa</h4>
+                        <p class="small mb-0">Pijat dan perawatan tubuh.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="info-card">
+                        <h4>Kolam Renang</h4>
+                        <p class="small mb-0">Buka setiap hari.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- neighborhood -->
+    <section class="SectionNeighborhood" id="SectionNeighborhood">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-5">
+                    <div class="ph pool" style="min-height:340px"></div>
+                </div>
+                <div class="col-md-7">
+                    <h2>Jelajahi sekitar hotel</h2>
+                    <div class="nb-item"><strong>Pantai</strong><br><span class="text-muted small">5 menit berjalan
+                            kaki</span></div>
+                    <div class="nb-item"><strong>Pusat belanja</strong><br><span class="text-muted small">10 menit
+                            berkendara</span></div>
+                    <div class="nb-item"><strong>Bandara</strong><br><span class="text-muted small">30 menit
+                            berkendara</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--offer-->
+    <section class="SectionOffer" id="SectionOffer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="offer-box">
+                        <div class="row g-0">
+                            <div class="col-md-7 p-4 p-md-5">
+                                <h3>Penawaran pembukaan</h3>
+                                <p class="mb-1">Mulai dari</p>
+                                <p class="fs-4">IDR 999.000++ <small>/ malam</small></p>
+                                <a href="#" class="btn btn-swaha">Pesan sekarang</a>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="ph warm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer class="SectionFooter" id="SectionFooter">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h4>The Swaha Signatures</h4>
+                    <p class="text-muted">Alamat hotel lengkap di sini.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Kontak</h5>
+                    <p class="mb-0">+62 000 0000 0000<br>info@swaha.example</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Ikuti kami</h5>
+                    <a href="#">Instagram</a><br><a href="#">Facebook</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Newsletter</h5>
+                    <form id="newsletterForm" class="d-flex gap-2" novalidate>
+                        <input type="email" class="form-control" placeholder="Email Anda" required>
+                        <button class="btn btn-swaha" type="submit">Kirim</button>
+                    </form>
+                    <small id="newsletterMsg" class="d-block mt-2"></small>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 text-muted small">© 2026 The Swaha Signatures</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

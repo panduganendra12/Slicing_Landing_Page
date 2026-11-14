@@ -1,0 +1,266 @@
+:root {
+    --cream: #e8edf7;
+    --sand: #efe4d3;
+    --navy: #12315a;
+    --navy-dark: #0c2444;
+    --orange: #e0532b;
+    --ink: #2a2a2a;
+    --muted: #6f6a63;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.65
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem)
+}
+
+section {
+    padding: 80px 0
+}
+
+.btn-swaha {
+    background: var(--orange);
+    color: #fff;
+    border-radius: 2px;
+    padding: .6rem 1.6rem;
+    border: 0
+}
+
+.btn-swaha:hover {
+    background: #c4421d;
+    color: #fff
+}
+
+.btn-outline-swaha {
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: .5rem 1.4rem
+}
+
+.badge-tag {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: .75rem;
+    padding: .15rem .7rem;
+    margin-bottom: .8rem
+}
+
+.ph {
+    background: linear-gradient(135deg, #2f6f7a, #8fb7b0);
+    min-height: 240px;
+    width: 100%;
+    border-radius: 4px
+}
+
+.ph.warm {
+    background: linear-gradient(135deg, #c78a5a, #ecd3b0)
+}
+
+.ph.pool {
+    background: linear-gradient(135deg, #2aa6c9, #9fe0ee)
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #f4f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .6s ease, visibility .6s ease
+}
+
+#preloader img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden
+}
+
+body.is-loading {
+    overflow: hidden
+}
+
+@media (prefers-reduced-motion:reduce) {
+    #preloader {
+        transition: none
+    }
+}
+
+/* Navbar */
+.SectionNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 14px 0;
+    transition: background .3s
+}
+
+.SectionNavbar.scrolled {
+    background: var(--navy-dark)
+}
+
+.SectionNavbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: .9rem;
+    margin-left: 1.5rem
+}
+
+.SectionNavbar .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: .05em;
+    margin: 0
+}
+
+/* Hero */
+.SectionHero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 0;
+    background: linear-gradient(180deg, #e0532b 0, #f08a4b 12%, #1f5d6b 38%, #0f3f4d 75%, var(--cream) 100%)
+}
+
+.SectionHero h1 {
+    font-size: clamp(3rem, 9vw, 6rem);
+    letter-spacing: .08em
+}
+
+.SectionHero .price {
+    font-size: 1.3rem
+}
+
+/* Welcome */
+.SectionWelcome {
+    background: var(--cream)
+}
+
+/* Rooms */
+.SectionRooms {
+    background: var(--cream)
+}
+
+.rooms-track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none
+}
+
+.rooms-track::-webkit-scrollbar {
+    display: none
+}
+
+.room-card {
+    flex: 0 0 calc(33.333% - .7rem);
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.room-card .ph {
+    min-height: 190px;
+    border-radius: 0
+}
+
+.room-card .body {
+    padding: 1rem 1.2rem
+}
+
+@media(max-width:767px) {
+    .room-card {
+        flex-basis: 85%
+    }
+}
+
+/* Dining */
+.SectionDining {
+    background: var(--navy);
+    color: #fff
+}
+
+.SectionDining .muted {
+    color: #c3cde0
+}
+
+/* Wellness */
+.SectionWellness {
+    background: var(--cream)
+}
+
+.info-card {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 6px;
+    padding: 1.6rem;
+    height: 100%;
+    text-align: center
+}
+
+/* Neighborhood */
+.SectionNeighborhood {
+    background: var(--sand)
+}
+
+.nb-item {
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    padding: .9rem 0
+}
+
+/* Offer */
+.SectionOffer {
+    background: var(--cream);
+    padding: 60px 0
+}
+
+.offer-box {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 6px;
+    overflow: hidden
+}
+
+.offer-box .ph {
+    min-height: 100%;
+    border-radius: 0
+}
+
+/* Footer */
+.SectionFooter {
+    background: var(--cream);
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    padding: 50px 0 24px;
+    font-size: .9rem
+}
+
+.SectionFooter a {
+    color: var(--ink);
+    text-decoration: none
+}
